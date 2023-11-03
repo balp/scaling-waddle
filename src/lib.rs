@@ -1,9 +1,9 @@
-pub fn fizz_buzz(number: u64) ->  String {
+pub fn fizz_buzz(number: u64) -> String {
     match number {
-        i if i % (3*5) == 0 => String::from("FizzBuzz"),
+        i if i % (3 * 5) == 0 => String::from("FizzBuzz"),
         i if i % (5) == 0 => String::from("Buzz"),
         i if i % (3) == 0 => String::from("Fizz"),
-        i => i.to_string()
+        i => i.to_string(),
     }
 }
 
