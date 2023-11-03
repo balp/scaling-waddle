@@ -73,6 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - static_analysis
+      - style_check
       - make_docs
       - build_release
       - build_debug
