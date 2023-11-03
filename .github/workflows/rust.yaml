@@ -13,6 +13,10 @@ jobs:
         with:
           command: build
           args: --release --all-features
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Built release binaries (x86)
+          path: target/release/
   build_debug:
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +29,18 @@ jobs:
         with:
           command: build
           args: --all-features
+  style_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ructions/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: ructions/cargo@v1
+        with:
+          command: fmt
+          args: --check
   static_analysis:
     runs-on: ubuntu-latest
     steps:
@@ -72,5 +88,5 @@ jobs:
           args: --all-features
       - uses: actions/upload-artifact@v3
         with:
-          name: generated-documentation
-          path: target/doc/
+          name: Rust crate
+          path: package/*.crate
