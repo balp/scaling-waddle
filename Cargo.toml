@@ -1,8 +1,11 @@
 [package]
-name = "hiq-leap-fizzbuzz-template"
+name = "scaling-waddle-fizzbuzz"
 version = "0.1.0"
 edition = "2021"
-
+description = "a A simple sulution to to FizzBuzz Kata"
+license-file = "LICENSE"
+readme = "README.md"
+repository = "https://github.com/balp/scaling-waddle"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
